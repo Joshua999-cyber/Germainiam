@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Red vs Blue Chess</title>
+  <title>Black vs White Chess</title>
   <style>
     body { font-family: sans-serif; text-align: center; }
     #chessboard { display: grid; grid-template-columns: repeat(8, 60px); width: 480px; margin: 20px auto; }
     .square { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
     .white { background-color: #eee; }
     .black { background-color: #666; color: white; }
-    .red-piece { color: red; }
-    .blue-piece { color: blue; }
+    .white-piece { color: white; }
+    .black-piece { color: black; }
     button { margin: 10px; padding: 10px 20px; font-size: 16px; }
   </style>
 </head>
 <body>
-  <h1>Red vs Blue Chess</h1>
+  <h1>Black vs White Chess</h1>
   <div id="chessboard"></div>
   <button onclick="restartGame()">Restart</button>
   <button onclick="makeMove()">Move</button>
@@ -40,47 +40,10 @@
     }
 
     function setupPieces() {
-      // Red pieces (top)
-      squares[0].innerHTML = '<span class="red-piece">♜</span>';
-      squares[1].innerHTML = '<span class="red-piece">♞</span>';
-      squares[2].innerHTML = '<span class="red-piece">♝</span>';
-      squares[3].innerHTML = '<span class="red-piece">♛</span>';
-      squares[4].innerHTML = '<span class="red-piece">♚</span>';
-      squares[5].innerHTML = '<span class="red-piece">♝</span>';
-      squares[6].innerHTML = '<span class="red-piece">♞</span>';
-      squares[7].innerHTML = '<span class="red-piece">♜</span>';
-      for (let i = 8; i < 16; i++) {
-        squares[i].innerHTML = '<span class="red-piece">♟</span>';
-      }
-
-      // Blue pieces (bottom)
-      squares[56].innerHTML = '<span class="blue-piece">♜</span>';
-      squares[57].innerHTML = '<span class="blue-piece">♞</span>';
-      squares[58].innerHTML = '<span class="blue-piece">♝</span>';
-      squares[59].innerHTML = '<span class="blue-piece">♛</span>';
-      squares[60].innerHTML = '<span class="blue-piece">♚</span>';
-      squares[61].innerHTML = '<span class="blue-piece">♝</span>';
-      squares[62].innerHTML = '<span class="blue-piece">♞</span>';
-      squares[63].innerHTML = '<span class="blue-piece">♜</span>';
-      for (let i = 48; i < 56; i++) {
-        squares[i].innerHTML = '<span class="blue-piece">♟</span>';
-      }
-    }
-
-    function restartGame() {
-      createBoard();
-      setupPieces();
-    }
-
-    function makeMove() {
-      // Example move: move red pawn from square 8 to square 16
-      if (squares[8].innerHTML.includes('♟')) {
-        squares[16].innerHTML = squares[8].innerHTML;
-        squares[8].innerHTML = '';
-      }
-    }
-
-    restartGame();
-  </script>
-</body>
-</html>
+      // Black pieces (top)
+      squares[0].innerHTML = '<span class="black-piece">♜</span>';
+      squares[1].innerHTML = '<span class="black-piece">♞</span>';
+      squares[2].innerHTML = '<span class="black-piece">♝</span>';
+      squares[3].innerHTML = '<span class="black-piece">♛</span>';
+      squares[4].innerHTML = '<span class="black-piece">♚</span>';
+      squares[5].inner
